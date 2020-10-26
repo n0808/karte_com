@@ -8,4 +8,10 @@ Rails.application.routes.draw do
 
   resources :kartes
   root 'kartes#index'
+
+  resources :users, only: [:show] do
+    member do
+      get 'logout'
+    end
+  end
 end

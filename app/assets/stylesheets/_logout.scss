@@ -1,0 +1,34 @@
+.logout-page {
+  background-color: #f8f4e6;
+  width: 100%;
+  height: 800px;
+  padding: 40px;
+  &__content {
+    height: 250px;
+    width: 700px;
+    margin: 0 auto;
+    background: #fff;
+    .logout-page__form {
+      padding: 64px;
+      .logout-page__btn {
+        max-width: 320px;
+        margin: 0 auto;
+        .btn-default {
+          margin: 40px 0 0;
+          background: #f7c200;
+          border: 1px solid #f7c200;
+          border-radius: 4px;
+          color: #fff;
+          display: block;
+          width: 100%;
+          line-height: 48px;
+          font-size: 14px;
+          border: 1px solid;
+          cursor: pointer;
+          text-align: center;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
