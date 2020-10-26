@@ -1,7 +1,8 @@
 .header
   .header-top
     .header-top__name
-      〇〇歯科クリニック
+      - if user_signed_in?
+        = current_user.name
   .header-search
     %form.search
       %input.human-search{type: "placeholder"}
