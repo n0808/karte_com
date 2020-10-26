@@ -1,4 +1,4 @@
-class Instrutions < ActiveHash::Base
+class Instructions < ActiveHash::Base
   include ActiveHash::Associations
   field :choice
   add id: 1, choice: "TBI"
