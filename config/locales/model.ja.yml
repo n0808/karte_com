@@ -1,0 +1,23 @@
+ja:
+  activerecord:
+    models:
+      karte: カルテ
+      user: ユーザー
+    attributes:
+      karute:
+        name: 名前
+        sex: 性別
+        clinic_id: 診療所
+        before_treatment: aの項目
+        after_treatment: bの項目
+        instructions_id: cの項目
+        part: 具体的な部位・内容
+        medical_examination_id: 診察状況
+        doctor_name: 歯科医師名
+        day: 日付
+        facility_name: 施設名
+      user:
+        nickname: ニックネーム 
+        email: メールアドレス
+        password: パスワード
+        password_confirmation: パスワード（確認用）
