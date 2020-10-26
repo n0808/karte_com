@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2020_10_26_010227) do
     t.text "after_treatment", null: false
     t.text "part", null: false
     t.string "doctor_name", null: false
+    t.string "facility_name", null: false
     t.integer "sex_id", null: false
     t.integer "clinic_id", null: false
     t.integer "instructions_id", null: false
