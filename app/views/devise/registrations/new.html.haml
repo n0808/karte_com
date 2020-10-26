@@ -1,25 +1,42 @@
-%h2 Sign up
-= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-  = render "devise/shared/error_messages", resource: resource
-  .field
-    = f.label :name
-    %br/
-    = f.name_field :name, autofocus: true, autocomplete: "name"
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    - if @minimum_password_length
-      %em
-        (#{@minimum_password_length} characters minimum)
-    %br/
-    = f.password_field :password, autocomplete: "new-password"
-  .field
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation, autocomplete: "new-password"
-  .actions
-    = f.submit "Sign up"
-= render "devise/shared/links"
+.AccountPage
+  .AccountPageSignUp
+    %h2.Registration
+      企業情報の登録
+    .SignUpForm
+      = form_with model: @user, url: user_registration_path, class: 'new_user', local: true do |f|
+        .FormContent
+          .Field
+            = f.label :歯科名
+            %span.RequiredItem
+              必須
+            %br/
+            = f.text_field :name, autofocus: true, placeholder: "例)〇〇歯科", class: "Field__InputBox"
+            = render "devise/shared/error_messages", model: @user, attribute: :name
+          .Field
+            = f.label :メールアドレス
+            %span.RequiredItem
+              必須
+            %br/
+            = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "PC・携帯どちらでも可", class: "Field__InputBox"
+            = render "devise/shared/error_messages", model: @user, attribute: :email
+          .Field
+            = f.label :パスワード
+            %span.RequiredItem
+              必須
+            %br/
+            = f.password_field :password, autocomplete: "new-password", placeholder: "7文字以上の半角英数字", class: "Field__InputBox"
+            %p.FormInfoText
+              ※ 英字と数字の両方を含めて設定してください
+            = render "devise/shared/error_messages", model: @user, attribute: :password
+          .Field
+            = f.label :パスワード（確認用）
+            %span.RequiredItem
+              必須
+            %br/
+            = f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "もう一度入力してください", class: "Field__InputBox"
+          .ShowPassword
+            = check_box_tag :passcheck, class: "ShowPassword__CheckBox"
+            = f.label :パスワードを表示する, class: "ShowPassword__Text"
+            = render "devise/shared/error_messages", model: @user, attribute: :password_confirmation
+          .Actions
+            = f.submit "登録", class: "ActionBtn"
