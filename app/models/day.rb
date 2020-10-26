@@ -1,0 +1,37 @@
+class Day < ActiveHash::Base
+  include ActiveHash::Associations
+  field :choice
+  add id: 1, choice: "1日"
+  add id: 2, choice: "2日"
+  add id: 3, choice: "3日"
+  add id: 4, choice: "4日"
+  add id: 5, choice: "5日"
+  add id: 6, choice: "6日"
+  add id: 7, choice: "7日"
+  add id: 8, choice: "8日"
+  add id: 9, choice: "9日"
+  add id: 10, choice: "10日"
+  add id: 11, choice: "11日"
+  add id: 12, choice: "12日"
+  add id: 13, choice: "13日"
+  add id: 14, choice: "14日"
+  add id: 15, choice: "15日"
+  add id: 16, choice: "16日"
+  add id: 17, choice: "17日"
+  add id: 18, choice: "18日"
+  add id: 19, choice: "19日"
+  add id: 20, choice: "20日"
+  add id: 21, choice: "21日"
+  add id: 22, choice: "22日"
+  add id: 23, choice: "23日"
+  add id: 24, choice: "24日"
+  add id: 25, choice: "25日"
+  add id: 26, choice: "26日"
+  add id: 27, choice: "27日"
+  add id: 28, choice: "28日"
+  add id: 29, choice: "29日"
+  add id: 30, choice: "30日"
+  add id: 31, choice: "31日"
+  
+  has_many :kartes
+end
