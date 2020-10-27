@@ -40,8 +40,8 @@
   border-bottom: double 5px #cccccc;
 }
 .Top-central{
-  background-color: #f8f4e6;
-  height: 100vh;
+  @include haikei;
+
 }
 .Top-central_box{
   display: flex;
@@ -69,15 +69,16 @@
 }
 
 .Top-details{
-  margin-top: 20px;
+  padding-top: 20px;
+  @include haikei;
 }
 .Top-details_box{
-  border-bottom: double 5px #cccccc;
-  padding-bottom: 10px;
+  padding-bottom: 20px;
+  border-bottom: dashed 2px #cccccc;
 }
 .a-box{
   display: flex;
-  .title-a{
+  .title{
     @include box-size;
     font-size: 30px;
     height: 50px;
@@ -90,38 +91,43 @@
     width: 400px;
     line-height: 50px;
   }
-  .menu-diagnosis_box{
+  .medical_examination_box{
     @include box-size;
-    font-size: 15px;
+    margin-left: 50px;
+    font-size: 17px;
     height: 50px;
-    width: 350px;
+    width: 360px;
     line-height: 50px;
-    .meun-diagnosis{
-      margin-left: 10px;
+    .medical-box{
+      @include spece;
     }
   }
   .Doctor-name{
-    // border: 1px solid black;
-    margin-left: 20px;
+    margin-left: 60px;
     font-size: 20px;
     height: 50px;
     width: 350px;
     line-height: 50px;
-    .Doctorname{
-      height: 20px;
-      width: 200px;
+    display: flex;
+     .doctor-name{
+      @include spece;
     }
   }
 }
-.a-explanatory_text{
+.explanatory_text{
   margin-left: 70px;
-  .explanatory{
-    font-size: 14px;
+  .explanation{
+    width:60vw;
+    height:150px;
+    border: 1px solid #ccc;
+    resize: none;
+    margin-top: 10px;
+    font-size: 20px;
   }
 }
 .b-box{
   display: flex;
-  .title-a{
+  .title{
     @include box-size;
     font-size: 30px;
     height: 50px;
@@ -135,12 +141,7 @@
     line-height: 50px;
   }
 }
-.b-important_text{
-  margin-left: 70px;
-  .important{
-    font-size: 14px;
-  }
-}
+
 .c-box{
   display: flex;
   .title-c{
