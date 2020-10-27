@@ -144,7 +144,7 @@
 
 .c-box{
   display: flex;
-  .title-c{
+  .title{
     @include box-size;
     font-size: 30px;
     height: 50px;
@@ -160,18 +160,40 @@
 }
 .c-instructions_box{
   margin-left: 70px;
-  .menu-instructions_box{
-    font-size: 17px;
+  font-size: 17px;
+  .instructions-box{
+    @include spece;
   }
 }
-.meun-instructions{
-  margin-left: 5px;
+.submit-button {
+  padding:40px;
+  @include haikei;
+  .btn--yellow {
+    margin: 40px 0 0;
+    background:  #f7c200;
+    border: 1px solid  #f7c200;
+    color: #fff;
+    display: block;
+    width: 50%;
+    line-height: 48px;
+    font-size: 20px;
+    transition: all ease-out .3s;
+    text-align: center;
+    height: 46px;
+    margin: 0 auto;
+    cursor: pointer;
+  }
+  .btn--darkorange {
+    display: block;
+    line-height: 48px;
+    font-size: 14px;
+    text-align: center;
+    text-decoration: none;
+    margin: 24px auto 0px;
+    color: #ff8c00;
+  }
 }
-.other{
-  width: 156px;
-}
-
-.c-Part_text{
-  margin-left: 70px;
-  margin-top: 5px;
+.field_with_errors {
+  display: contents;
+  // もしくは diplay: inline;
 }

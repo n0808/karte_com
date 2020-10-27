@@ -10,7 +10,7 @@
             %span.RequiredItem
               必須
             %br/
-            = f.text_field :name, autofocus: true, placeholder: "例)〇〇歯科", class: "Field__InputBox"
+            = f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "例)〇〇歯科", class: "Field__InputBox"
             = render "devise/shared/error_messages", model: @user, attribute: :name
           .Field
             = f.label :メールアドレス

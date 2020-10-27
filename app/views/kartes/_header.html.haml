@@ -11,8 +11,7 @@
   .header-bottom
     .header-bottom__right
       - if user_signed_in?
-        = link_to "" do
-          カルテ登録
+        = link_to "カルテ登録", new_karte_path, class: "post"
         -# = link_to "マイページ", user_path(current_user.id)
         = link_to "ログアウト", logout_user_path(current_user.id)
       - else
