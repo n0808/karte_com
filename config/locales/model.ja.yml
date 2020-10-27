@@ -4,9 +4,9 @@ ja:
       karte: カルテ
       user: ユーザー
     attributes:
-      karute:
+      karte:
         name: 名前
-        sex: 性別
+        sex_id: 性別
         clinic_id: 診療所
         before_treatment: aの項目
         after_treatment: bの項目
@@ -17,7 +17,7 @@ ja:
         day: 日付
         facility_name: 施設名
       user:
-        nickname: ニックネーム 
+        name: 歯科名
         email: メールアドレス
         password: パスワード
         password_confirmation: パスワード（確認用）
