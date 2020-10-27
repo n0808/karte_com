@@ -1,0 +1,4 @@
+- if @karte.errors.any?
+  .Error-message
+    %p
+      = @karte.errors.full_message_for(column).first

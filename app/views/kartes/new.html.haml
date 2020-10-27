@@ -1,0 +1,88 @@
+.Top-main
+  = form_with model: @karte, local: true do |f|
+    .Top-main_header
+      .medical-title
+        訪問歯科診療 情報提供書 
+      .medical-day
+        %label{:for => "start"} 診療日:
+        %input#start{:max => "2200-12-31", :min => "2000-01-01", :name => "trip-start", :type => "date", :value => "", class: 'date'}/
+      -# .medical-download
+      -#   = link_to image_tag('pdf_128.png', alt: 'PDF', class: 'Download-link__PDF'), root_path
+    .Top-sub-title
+      ～歯科医師による居宅療養管理指導の情報提供、及び歯科衛生士等による居宅療養管理指導に係る歯科衛生士への指示内容～
+    .Top-central
+      .Top-central_box
+        .Top-central_box__name
+          %h3.Top-central_box__name__name
+            患者名
+          %div
+            = f.text_field :name, class:"name__box"
+            = render partial: 'error_message', locals: { column: :name }
+        .Top-central_box__sex
+          = f.collection_radio_buttons :sex_id, Sex.all, :id, :choice, {prompt: ""}, {class: "gender-box"}
+          = render partial: 'error_message', locals: { column: :sex_id }
+        .Top-central_box__place
+          = f.collection_radio_buttons :clinic_id, Clinic.all, :id, :choice, {prompt: ""}, {class: "place-box"}
+          = f.text_field :facility_name, class:"place-name", placeholder: "施設の名称"
+          = render partial: 'error_message', locals: { column: :clinic_id }
+
+    -# .Top-details
+    -#   .Top-details_box
+    -#     .a-box
+    -#       .title-a
+    -#         a
+    -#       .symptoms
+    -#         病状の経過、本日の処置内容、次回予定等
+    -#       .menu-diagnosis_box
+    -#         %input.meun-diagnosis{:name => "menu", :type => "checkbox", :value => "0"}>/
+    -#         初診
+    -#         %input.meun-diagnosis{:name => "menu", :type => "checkbox", :value => "1"}>/
+    -#         再診
+    -#         %input.meun-diagnosis{:name => "menu", :type => "checkbox", :value => "2"}>/
+    -#         急患
+    -#         %input.meun-diagnosis{:name => "menu", :type => "checkbox", :value => "3"}>/
+    -#         DRチェック
+    -#         %input.meun-diagnosis{:name => "menu", :type => "checkbox", :value => "4"}>/
+    -#         再初診
+    -#       .Doctor-name
+    -#         %label{:for => "name"} 歯科医師名:
+    -#         %input#Doctorname{:name => "name", :required => "", :type => "text", class: 'Doctorname'}
+    -#     .a-explanatory_text
+    -#       %label{:for => "explanatory"}
+    -#       %textarea#explanatory{:cols => "103", :name => "explanatory", :rows => "6", class: 'explanatory'}
+    -#     .b-box
+    -#       .title-a
+    -#         b
+    -#       .symptoms
+    -#         治療後の助言、及び療養生活をする上での留意点等
+    -#     .b-important_text
+    -#       %label{:for => "important"}
+    -#       %textarea#important{:cols => "103", :name => "important", :rows => "6", class: 'important'}
+    -#     .c-box
+    -#       .c-box
+    -#       .title-c
+    -#         c
+    -#       .instructions
+    -#         口腔ケアを行う歯科衛生士への指示内容
+    -#     .c-instructions_box
+    -#       .menu-instructions_box
+    -#         %input.meun-instructions{:name => "menu", :type => "checkbox", :value => "0"}>/
+    -#         ＴＢＩ
+    -#         %input.meun-instructions{:name => "menu", :type => "checkbox", :value => "1"}>/
+    -#         義歯管理
+    -#         %input.meun-instructions{:name => "menu", :type => "checkbox", :value => "2"}>/
+    -#         口腔清掃
+    -#         %input.meun-instructions{:name => "menu", :type => "checkbox", :value => "3"}>/
+    -#         運動
+    -#         %input.meun-instructions{:name => "menu", :type => "checkbox", :value => "4"}>/
+    -#         マッサージ
+    -#         %input.meun-instructions{:name => "menu", :type => "checkbox", :value => "5"}>/
+    -#         リハビリ
+    -#         %input.meun-instructions{:name => "menu", :type => "checkbox", :value => "6"}>/
+    -#         その他
+    -#         %input#other{:name => "other", :required => "", :type => "text", class: 'other' }
+    -#     .c-Part_text
+    -#       %label{:for => "part"}
+    -#       %textarea#part{:cols => "103", :name => "part", :rows => "2", placeholder: "（具体的部位・内容）", class: 'part'}
+    -#     .Top-details_buttun
+    -#       %input{:type => "submit", :value => "送信"}

@@ -1,0 +1,176 @@
+@import "mixin";
+.Top-main{
+  width: 100vw;
+  background-color: #ffffff;
+}
+.Top-main_header{
+  display: flex;
+  width: 100vw;
+}
+.medical-title{
+  width: 60vw;
+  font-size: 30px;
+  text-decoration:underline;
+  margin-left: 50px;
+  margin-top: 10px;
+}
+.medical-day{
+  width: 20vw;
+  font-size: 20px;
+  margin-top: 12px;
+  .label {
+    display: block;
+    font: 1rem 'Fira Sans', sans-serif;
+  }
+  .input,
+  label {
+    margin: .4rem 0;
+  }
+  .date{
+    height: 22px;
+  }
+}
+.Download-link__PDF{
+  width: 75px;
+}
+
+.Top-sub-title{
+  font-size: 20px;
+  text-align: center;
+  border-bottom: double 5px #cccccc;
+}
+.Top-central{
+  background-color: #f8f4e6;
+  height: 100vh;
+}
+.Top-central_box{
+  display: flex;
+  justify-content: space-around;
+  font-size: 22px;
+  padding-top: 15px;
+  padding-bottom: 20px;
+  border-bottom: dashed 2px #cccccc;
+  &__name{
+    display: flex;
+    .name__box{
+      @include spece;
+    }
+  }
+  .gender-box{
+    @include spece;
+  }
+  .place-box{
+    @include spece;
+  }
+  .place-name{
+    @include spece;
+    width: 300px;
+  }
+}
+
+.Top-details{
+  margin-top: 20px;
+}
+.Top-details_box{
+  border-bottom: double 5px #cccccc;
+  padding-bottom: 10px;
+}
+.a-box{
+  display: flex;
+  .title-a{
+    @include box-size;
+    font-size: 30px;
+    height: 50px;
+    width: 50px;
+  }
+  .symptoms{
+    @include box-size;
+    font-size: 20px;
+    height: 50px;
+    width: 400px;
+    line-height: 50px;
+  }
+  .menu-diagnosis_box{
+    @include box-size;
+    font-size: 15px;
+    height: 50px;
+    width: 350px;
+    line-height: 50px;
+    .meun-diagnosis{
+      margin-left: 10px;
+    }
+  }
+  .Doctor-name{
+    // border: 1px solid black;
+    margin-left: 20px;
+    font-size: 20px;
+    height: 50px;
+    width: 350px;
+    line-height: 50px;
+    .Doctorname{
+      height: 20px;
+      width: 200px;
+    }
+  }
+}
+.a-explanatory_text{
+  margin-left: 70px;
+  .explanatory{
+    font-size: 14px;
+  }
+}
+.b-box{
+  display: flex;
+  .title-a{
+    @include box-size;
+    font-size: 30px;
+    height: 50px;
+    width: 50px;
+  }
+  .symptoms{
+    @include box-size;
+    font-size: 20px;
+    height: 50px;
+    width: 480px;
+    line-height: 50px;
+  }
+}
+.b-important_text{
+  margin-left: 70px;
+  .important{
+    font-size: 14px;
+  }
+}
+.c-box{
+  display: flex;
+  .title-c{
+    @include box-size;
+    font-size: 30px;
+    height: 50px;
+    width: 50px;
+  }
+  .instructions{
+    @include box-size;
+    font-size: 20px;
+    height: 50px;
+    width: 380px;
+    line-height: 50px;
+  }
+}
+.c-instructions_box{
+  margin-left: 70px;
+  .menu-instructions_box{
+    font-size: 17px;
+  }
+}
+.meun-instructions{
+  margin-left: 5px;
+}
+.other{
+  width: 156px;
+}
+
+.c-Part_text{
+  margin-left: 70px;
+  margin-top: 5px;
+}
