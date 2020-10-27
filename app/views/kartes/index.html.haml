@@ -2,15 +2,51 @@
 
 .top
   - if user_signed_in?
-    .top-box
+    .top-title
       %h1.title
         顧客情報一覧
-        .top-box__name
-          名前
-        .top-box__sex
-          性別
-        .top-box__place
-          診療場所
+    -# %ul.top-box
+    -#   %li
+    -#     患者名
+    -#   %li
+    -#     性別
+    -#   %li
+    -#     診療場所
+    -#   %li
+    -#     診療日
+    .top-list
+      %table
+        %tr
+          %th
+            患者名
+          %th
+            性別
+          %th
+            診療場所
+          %th
+            診療日
+        %tr
+          %td
+            鈴木 太郎
+          %td
+            男性
+          %td
+            在宅
+          %td
+            2020/10/27
+        %tr
+          %td
+            山田　花子
+          %td
+            女性
+          %td
+            施設
+          %td
+            2020/10/26
+        
+
+        
   - else
-    %h1.message
-      顧客情報の登録・確認には会員登録またはログインが必要となります。
+    .top-message
+      %h1.message
+        顧客情報の登録・確認には会員登録またはログインが必要となります。
