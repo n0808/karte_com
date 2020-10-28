@@ -93,7 +93,7 @@
   }
   .medical_examination_box{
     @include box-size;
-    margin-left: 50px;
+    margin-left: 30px;
     font-size: 17px;
     height: 50px;
     width: 360px;
@@ -103,7 +103,7 @@
     }
   }
   .Doctor-name{
-    margin-left: 60px;
+    margin-left: 30px;
     font-size: 20px;
     height: 50px;
     width: 350px;
@@ -112,6 +112,12 @@
      .doctor-name{
       @include spece;
     }
+  }
+  .day{
+    display: flex;
+    font-size: 20px;
+    height: 50px;
+    line-height: 50px;
   }
 }
 .explanatory_text{
@@ -198,5 +204,5 @@
 
 }
 .day{
-
+  display: flex;
 }

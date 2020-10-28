@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  def shou
+  def show
   end
 
   def logout
