@@ -9,7 +9,7 @@ class CreateKartes < ActiveRecord::Migration[6.0]
       t.string :facility_name
       t.integer :sex_id, null:false
       t.integer :clinic_id, null:false
-      t.integer :instructions_id, null:false
+      t.integer :instructions_id
       t.integer :medical_examination_id, null:false
       t.integer :day_id, null:false
       t.timestamps
