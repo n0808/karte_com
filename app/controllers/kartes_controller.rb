@@ -1,5 +1,7 @@
 class KartesController < ApplicationController
+  
   def index
+    @kartes = Karte.order('created_at DESC')
   end
 
   def new

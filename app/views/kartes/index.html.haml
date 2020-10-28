@@ -25,24 +25,18 @@
             診療場所
           %th
             診療日
-        %tr
-          %td
-            鈴木 太郎
-          %td
-            男性
-          %td
-            在宅
-          %td
-            2020/10/27
-        %tr
-          %td
-            山田　花子
-          %td
-            女性
-          %td
-            施設
-          %td
-            2020/10/26
+        - @kartes.each do |karte|
+          %tr
+            %td
+              = karte.name
+            %td
+              = karte.sex.choice
+            %td
+              = karte.clinic.choice
+            %td
+              = karte.created_at.strftime('%Y/%m/%d')
+          %tr
+
         
 
         
