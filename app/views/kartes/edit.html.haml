@@ -1,0 +1,74 @@
+.Top-main
+  = form_with model: @karte, local: true do |f|
+    .Top-main_header
+      .medical-title
+        訪問歯科診療 情報提供書 
+    .Top-sub-title
+      ～歯科医師による居宅療養管理指導の情報提供、及び歯科衛生士等による居宅療養管理指導に係る歯科衛生士への指示内容～
+    .Top-central
+      .Top-central_box
+        .Top-central_box__name
+          %h3.Top-central_box__name__name
+            患者名
+          %div
+            = f.text_field :name, class:"name__box"
+            = render partial: 'error_message', locals: { column: :name }
+        .Top-central_box__sex
+          = f.collection_radio_buttons :sex_id, Sex.all, :id, :choice, {prompt: ""}, {class: "gender-box"}
+          = render partial: 'error_message', locals: { column: :sex_id }
+        .Top-central_box__place
+          = f.collection_radio_buttons :clinic_id, Clinic.all, :id, :choice, {prompt: ""}, {class: "place-box"}
+          = f.text_field :facility_name, class:"place-name", placeholder: "施設の名称"
+          = render partial: 'error_message', locals: { column: :clinic_id }
+
+    .Top-details
+      .Top-details_box
+        .a-box
+          .title
+            a
+          .symptoms
+            病状の経過、本日の処置内容、次回予定等
+          .medical_examination_box
+            = f.collection_select :medical_examination_id, MedicalExamination.all, :id, :choice, {prompt: ""}, {class: "medical-box"}
+            = render partial: 'error_message', locals: { column: :medical_examination_id }
+          .Doctor-name
+            %h3.Doctor-name__name
+              歯科医師名
+            %div
+              = f.text_field :doctor_name, class:"doctor-name"
+              = render partial: 'error_message', locals: { column: :doctor_name }
+          .day
+            %h3.days
+              日付
+            %div
+              = f.collection_select :day_id, Day.all, :id, :choice, {prompt: ""}, {class: "day-box"}
+              = render partial: 'error_message', locals: { column: :day_id }
+        .explanatory_text
+          = f.text_area :before_treatment, class:"explanation"
+          = render partial: 'error_message', locals: { column: :before_treatment }
+    .Top-details
+      .Top-details_box
+        .b-box
+          .title
+            b
+          .symptoms
+            治療後の助言、及び療養生活をする上での留意点等
+        .explanatory_text
+          = f.text_area :after_treatment, class:"explanation"
+          = render partial: 'error_message', locals: { column: :after_treatment }
+    .Top-details
+      .Top-details_box
+        .c-box
+          .title
+            c
+          .instructions
+            口腔ケアを行う歯科衛生士への指示内容
+        .c-instructions_box
+          = f.collection_select :instructions_id, Instructions.all, :id, :choice, {prompt: ""}, {class: "instructions-box"}
+          = render partial: 'error_message', locals: { column: :instructions_id }
+        .explanatory_text
+          = f.text_area :part, class:"explanation", placeholder: "（具体的部位・内容）"
+    .submit-button
+      .actions
+        = f.submit "更新する", class: "btn--yellow"
+      = link_to 'もどる', root_path, class: 'btn--darkorange'

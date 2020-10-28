@@ -26,6 +26,29 @@ class KartesController < ApplicationController
     @karte = Karte.find(params[:id])
   end
 
+  def edit
+    @karte = Karte.find(params[:id])
+  end
+
+  def update
+    @karte = Karte.find(params[:id])
+    if @karte.update(karte_params)
+      redirect_to root_path
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @karte = Karte.find(params[:id])
+    if @karte.destroy
+      redirect_to delete_done_kartes_path
+    else
+      flash[:alert] = '削除できませんでした'
+      render :show
+    end
+  end
+
 
   private
 
@@ -33,6 +56,10 @@ class KartesController < ApplicationController
     params.require(:karte).permit(:name, :before_treatment, :after_treatment, :part, :doctor_name, :facility_name, :sex_id, :clinic_id, :instructions_id, :medical_examination_id, :day_id,).merge(user_id: current_user.id)
   end
 
+
+  # def set_karte
+  #   @karte = Karte.find(params[:id])
+  # end
 
   def set_post
     @karte = current_user.kartes.find(params[:id])

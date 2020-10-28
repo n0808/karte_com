@@ -6,7 +6,13 @@ Rails.application.routes.draw do
     get 'users', to: 'users/registrations#new'
   end
 
-  resources :kartes
+  resources :kartes do
+    collection do
+      get 'update_done'
+      get 'delete_done'
+    end
+  end
+  
   root 'kartes#index'
 
   resources :users, only: [:show] do
