@@ -1,0 +1,63 @@
+.Top-main
+  = form_with model: @karte, local: true do |f|
+    .Top-main_header
+      .medical-title
+        訪問歯科診療 情報提供書 
+    .Top-sub-title
+      ～歯科医師による居宅療養管理指導の情報提供、及び歯科衛生士等による居宅療養管理指導に係る歯科衛生士への指示内容～
+    .Top-central
+      .Top-central_box
+        .Top-central_box__name
+          %h3.Top-central_box__name__name
+            患者名
+          %div.name__box
+            = @karte.name 
+        .Top-central_box__sex
+          = @karte.sex.choice
+        .Top-central_box__place
+          = @karte.clinic.choice
+          = @karte.facility_name
+
+    .Top-details
+      .Top-details_box
+        .a-box
+          .title
+            a
+          .symptoms
+            病状の経過、本日の処置内容、次回予定等
+          .medical_examination_box
+            = @karte.medical_examination.choice
+          .Doctor-name
+            %h3.Doctor-name__name
+              歯科医師名
+            %div
+              = @karte.doctor_name
+          .day
+            %h3.days
+              日付
+            %div
+              = @karte.created_at.strftime('%Y/%m/%d')
+        .explanatory_text
+          = @karte.before_treatment
+    .Top-details
+      .Top-details_box
+        .b-box
+          .title
+            b
+          .symptoms
+            治療後の助言、及び療養生活をする上での留意点等
+        .explanatory_text
+          =  @karte.after_treatment
+    .Top-details
+      .Top-details_box
+        .c-box
+          .title
+            c
+          .instructions
+            口腔ケアを行う歯科衛生士への指示内容
+        .c-instructions_box
+          = @karte.instructions.choice
+        .explanatory_text
+          = @karte.part
+    .submit-button
+      = link_to 'もどる', root_path, class: 'btn--darkorange'

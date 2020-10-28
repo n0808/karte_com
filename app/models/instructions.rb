@@ -8,5 +8,6 @@ class Instructions < ActiveHash::Base
   add id: 5, choice: "マッサージ"
   add id: 6, choice: "リハビリ"
   add id: 7, choice: "その他"
+  add id: 8, choice: "特になし"
   has_many :kartes
 end

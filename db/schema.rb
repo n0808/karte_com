@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 2020_10_27_230211) do
     t.string "facility_name"
     t.integer "sex_id", null: false
     t.integer "clinic_id", null: false
-    t.integer "instructions_id", null: false
+    t.integer "instructions_id"
     t.integer "medical_examination_id", null: false
     t.integer "day_id", null: false
     t.datetime "created_at", precision: 6, null: false

@@ -23,6 +23,7 @@ class KartesController < ApplicationController
   end
 
   def show
+    @karte = Karte.find(params[:id])
   end
 
 

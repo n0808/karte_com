@@ -28,7 +28,8 @@
         - @kartes.each do |karte|
           %tr
             %td
-              = karte.name
+              = link_to karte_path(id: karte[:id]),class: 'name_link' do
+                = karte.name
             %td
               = karte.sex.choice
             %td
