@@ -8,8 +8,9 @@ class KartesController < ApplicationController
 
   def create
     @karte = Karte.create(karte_params)
-    if @karte.save
+    if @karte.created_at
       redirect_to root_path
+      logger.debug @karte.errors.inspect
     else
       render :new
     end

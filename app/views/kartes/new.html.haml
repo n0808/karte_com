@@ -34,14 +34,20 @@
           .symptoms
             病状の経過、本日の処置内容、次回予定等
           .medical_examination_box
-            -# = f.collection_check_boxes :medical_examination_id, MedicalExamination.all, :id, :choice, {prompt: ""}, {class: "medical-box"}
-            -# = render partial: 'error_message', locals: { column: :medical_examination_id }
+            = f.collection_select :medical_examination_id, MedicalExamination.all, :id, :choice, {prompt: ""}, {class: "medical-box"}
+            = render partial: 'error_message', locals: { column: :medical_examination_id }
           .Doctor-name
             %h3.Doctor-name__name
               歯科医師名
             %div
               = f.text_field :doctor_name, class:"doctor-name"
               = render partial: 'error_message', locals: { column: :doctor_name }
+          .day
+            %h3.days
+              日付
+            %div
+              = f.collection_select :day_id, Day.all, :id, :choice, {prompt: ""}, {class: "day-box"}
+              = render partial: 'error_message', locals: { column: :day_id }
         .explanatory_text
           = f.text_area :before_treatment, class:"explanation"
           = render partial: 'error_message', locals: { column: :before_treatment }
@@ -63,8 +69,8 @@
           .instructions
             口腔ケアを行う歯科衛生士への指示内容
         .c-instructions_box
-          -# = f.collection_check_boxes :instructions_id, Instructions.all, :id, :choice, {prompt: ""}, {class: "instructions-box"}
-          -# = render partial: 'error_message', locals: { column: :instructions_id }
+          = f.collection_select :instructions_id, Instructions.all, :id, :choice, {prompt: ""}, {class: "instructions-box"}
+          = render partial: 'error_message', locals: { column: :instructions_id }
         .explanatory_text
           = f.text_area :part, class:"explanation", placeholder: "（具体的部位・内容）"
     .submit-button

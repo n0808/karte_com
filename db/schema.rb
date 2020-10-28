@@ -10,15 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_26_044047) do
+ActiveRecord::Schema.define(version: 2020_10_27_230211) do
 
   create_table "kartes", force: :cascade do |t|
     t.string "name", null: false
-    t.text "before_treatment", null: false
-    t.text "after_treatment", null: false
-    t.text "part", null: false
+    t.text "before_treatment"
+    t.text "after_treatment"
+    t.text "part"
     t.string "doctor_name", null: false
-    t.string "facility_name", null: false
+    t.string "facility_name"
     t.integer "sex_id", null: false
     t.integer "clinic_id", null: false
     t.integer "instructions_id", null: false
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 2020_10_26_044047) do
     t.integer "day_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id", null: false
   end
 
   create_table "users", force: :cascade do |t|
