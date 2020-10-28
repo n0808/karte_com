@@ -14,7 +14,7 @@ ja:
         part: 具体的な部位・内容
         medical_examination_id: 診察状況
         doctor_name: 歯科医師名
-        day: 日付
+        day_id: 日付
         facility_name: 施設名
       user:
         name: 歯科名
