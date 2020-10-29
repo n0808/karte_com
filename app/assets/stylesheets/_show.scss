@@ -14,25 +14,6 @@
   margin-left: 50px;
   margin-top: 10px;
 }
-.medical-day{
-  width: 20vw;
-  font-size: 20px;
-  margin-top: 12px;
-  .label {
-    display: block;
-    font: 1rem 'Fira Sans', sans-serif;
-  }
-  .input,
-  label {
-    margin: .4rem 0;
-  }
-  .date{
-    height: 22px;
-  }
-}
-.Download-link__PDF{
-  width: 75px;
-}
 
 .Top-sub-title{
   font-size: 20px;
@@ -46,13 +27,13 @@
 .Top-central_box{
   display: flex;
   justify-content: space-around;
-  font-size: 22px;
+  font-size: 20px;
   padding-top: 15px;
   padding-bottom: 20px;
   border-bottom: dashed 2px #cccccc;
-  &__name{
+  &__list{
     display: flex;
-    .name__box{
+    .name-box{
       @include spece;
     }
   }
@@ -118,6 +99,9 @@
     font-size: 20px;
     height: 50px;
     line-height: 50px;
+    .day-box{
+      @include spece;
+    }
   }
 }
 .explanatory_text{
@@ -189,11 +173,12 @@
     height: 46px;
     margin: 0 auto;
     cursor: pointer;
+    text-decoration: none;
   }
   .delete_btn {
     margin: 40px 0 0;
-    background:  #f7c200;
-    border: 1px solid  #f7c200;
+    background:  #ffb6c1;
+    border: 1px solid  #ffb6c1;
     color: #fff;
     display: block;
     width: 30%;
@@ -204,6 +189,7 @@
     height: 46px;
     margin: 0 auto;
     cursor: pointer;
+    text-decoration: none;
   }
 }
 .return-button{

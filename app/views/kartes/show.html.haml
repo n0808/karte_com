@@ -7,16 +7,26 @@
       ～歯科医師による居宅療養管理指導の情報提供、及び歯科衛生士等による居宅療養管理指導に係る歯科衛生士への指示内容～
     .Top-central
       .Top-central_box
-        .Top-central_box__name
-          %h3.Top-central_box__name__name
-            患者名
-          %div.name__box
+        .Top-central_box__list
+          %h3.list-name
+            患者名 :
+          %div.name-box
             = @karte.name 
-        .Top-central_box__sex
-          = @karte.sex.choice
-        .Top-central_box__place
-          = @karte.clinic.choice
-          = @karte.facility_name
+        .Top-central_box__list
+          %h3.list-name
+            性別 :
+          %div.gender-box
+            = @karte.sex.choice
+        .Top-central_box__list
+          %h3.list-name
+            診療所 :
+          %div.place-box
+            = @karte.clinic.choice
+            = @karte.facility_name
+            -# - if @karte.clinic.choice = "施設"
+            -#   = @karte.facility_name
+            -# - else 
+            -#   = @karte.clinic.choice
 
     .Top-details
       .Top-details_box
@@ -28,14 +38,14 @@
           .medical_examination_box
             = @karte.medical_examination.choice
           .Doctor-name
-            %h3.Doctor-name__name
-              歯科医師名
-            %div
+            %h3.list-name
+              歯科医師名 :
+            %div.doctor-name
               = @karte.doctor_name
           .day
             %h3.days
-              日付
-            %div
+              診療日 :
+            %div.day-box
               = @karte.created_at.strftime('%Y/%m/%d')
         .explanatory_text
           = @karte.before_treatment
