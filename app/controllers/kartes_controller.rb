@@ -4,7 +4,9 @@ class KartesController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show, :search]
 
   def index
-    @kartes = current_user.kartes.all.order('created_at DESC')
+    if user_signed_in?
+      @kartes = current_user.kartes.all.order('created_at DESC')
+    end
   end
 
   def new
