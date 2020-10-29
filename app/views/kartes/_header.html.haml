@@ -4,10 +4,10 @@
       - if user_signed_in?
         = current_user.name
   .header-search
-    %form.search
-      %input.human-search{type: "placeholder"}
-      %button.search-btn{type: "submit"}
-        検索
+    = form_with url:search_kartes_path, local: true,method: :get, class: "search" do |f|
+      =f.text_field :keyword, class: "karte-search"
+      %label.search-btn
+        = f.submit "検索"
   .header-bottom
     .header-bottom__right
       - if user_signed_in?

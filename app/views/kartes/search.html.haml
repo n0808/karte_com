@@ -1,0 +1,36 @@
+= render partial: 'header'
+
+.Search
+  .Search__main--title
+    - if @keyword == ""
+      %h2.bold 全ての患者情報
+    %h2.bold= @keyword
+    %span の検索結果
+    .Search__main--title__count
+      = @kartes.length
+      %span 件表示
+  .Search__main--contents
+    - if @kartes.length == 0
+      %p 情報が見つかりません
+    %table
+      %tr
+        %th
+          患者名
+        %th
+          性別
+        %th
+          診療場所
+        %th
+          診療日
+      - @kartes.each do |karte|
+        %tr
+          %td
+            = link_to karte_path(id: karte[:id]),class: 'name_link' do
+              = karte.name
+          %td
+            = karte.sex.choice
+          %td
+            = karte.clinic.choice
+          %td
+            = karte.created_at.strftime('%Y/%m/%d')
+        %tr

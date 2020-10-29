@@ -19,4 +19,12 @@ class Karte < ApplicationRecord
   belongs_to_active_hash :instructions
   belongs_to_active_hash :medical_examination
   belongs_to_active_hash :day
+
+  def self.search(search)
+    if search != ""
+      Karte.where('name LIKE(?)',"%#{search}%")
+    else
+      Karte.all
+    end
+  end
 end

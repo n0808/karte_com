@@ -1,7 +1,7 @@
 class KartesController < ApplicationController
   # before_action :authenticate_user!, except: [:index, :show,]
   # before_action :set_karte, only: [:index,:edit, :update, :show, :destroy]
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:index, :show, :search]
 
   def index
     @kartes = current_user.kartes.all.order('created_at DESC')
@@ -49,6 +49,10 @@ class KartesController < ApplicationController
     end
   end
 
+  def search
+    @keyword = params[:keyword]
+    @kartes = Karte.search(params[:keyword]).order('created_at DESC')
+  end
 
   private
 

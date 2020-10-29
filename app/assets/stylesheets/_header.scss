@@ -15,8 +15,8 @@
     .search{
       display: flex;
       margin-top: 10px;
-      margin-left: 45px;
-      .human-search{
+      margin-left: 100px;
+      .karte-search{
         width: 100%;
         max-width: 40%;
         height: 30px;
@@ -24,7 +24,6 @@
       .search-btn{
         width: 60px;
       }
-      
     }
   }
   .header-bottom {
@@ -36,7 +35,7 @@
     font-size: 21px;
     float: right;
     margin-top: 9px;
-    margin-right: 25px;
+    margin-right: 65px;
     .header-bottom__right {
       a {
         display: inline-block;

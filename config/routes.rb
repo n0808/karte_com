@@ -10,9 +10,10 @@ Rails.application.routes.draw do
     collection do
       get 'update_done'
       get 'delete_done'
+      get 'search'
     end
   end
-  
+
   root 'kartes#index'
 
   resources :users, only: [:show] do
