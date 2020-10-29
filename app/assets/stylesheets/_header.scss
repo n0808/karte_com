@@ -22,7 +22,10 @@
         height: 30px;
       }
       .search-btn{
-        width: 60px;
+        & > input {
+          width: 60px;
+          height: 30px;
+        }
       }
     }
   }
