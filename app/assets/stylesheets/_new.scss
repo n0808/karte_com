@@ -46,14 +46,18 @@
 .Top-central_box{
   display: flex;
   justify-content: space-around;
-  font-size: 22px;
+  // font-size: 20px;
   padding-top: 15px;
   padding-bottom: 20px;
   border-bottom: dashed 2px #cccccc;
   &__name{
     display: flex;
+    margin-top: 3px;
+    font-size: 15px;
     .name__box{
       @include spece;
+      font-size: 15px;
+
     }
   }
   .gender-box{
@@ -122,15 +126,44 @@
 }
 .explanatory_text{
   margin-left: 70px;
+  display: flex;
+
   .explanation{
-    width:60vw;
+    width:50vw;
     height:150px;
     border: 1px solid #ccc;
     resize: none;
     margin-top: 10px;
     font-size: 20px;
   }
+  .doctor-time{
+    font-size: 20px;
+    &__box{
+      display: flex;
+      .start-time{
+        @include time;
+      }
+      .end-time{
+        @include time;
+        margin-left: 5px;
+      }
+    }
+  }
+  .dh-time{
+    font-size: 20px;
+    &__box{
+      display: flex;
+      .start-time{
+        @include time;
+      }
+      .end-time{
+        @include time;
+        margin-left: 5px;
+      }
+    }
+  }
 }
+
 .b-box{
   display: flex;
   .title{
