@@ -109,20 +109,22 @@
   }
   .Doctor-name{
     margin-left: 30px;
-    font-size: 20px;
+    padding-top: 15px;
+    font-size: 15px;
     height: 50px;
     width: 350px;
-    line-height: 50px;
     display: flex;
      .doctor-name{
       @include spece;
+      font-size: 15px;
     }
   }
   .day{
+    padding-top: 15px;
     display: flex;
-    font-size: 20px;
+    font-size: 15px;
     height: 50px;
-    line-height: 50px;
+
   }
 }
 .explanatory_text{
@@ -137,32 +139,38 @@
     margin-top: 10px;
     font-size: 20px;
   }
-  .doctor-time{
-    font-size: 20px;
-    &__box{
-      display: flex;
-      .start-time{
-        @include time;
+  .time__box{
+    margin-top: 5px;
+    padding-left: 20px;
+    .doctor-time{
+      font-size: 20px;
+      &__box{
+        display: flex;
+        .start-time{
+          @include time;
+        }
+        .end-time{
+          @include time;
+          margin-left: 5px;
+        }
       }
-      .end-time{
-        @include time;
-        margin-left: 5px;
+    }
+    .dh-time{
+      font-size: 20px;
+      margin-top: 10px;
+      &__box{
+        display: flex;
+        .start-time{
+          @include time;
+        }
+        .end-time{
+          @include time;
+          margin-left: 5px;
+        }
       }
     }
   }
-  .dh-time{
-    font-size: 20px;
-    &__box{
-      display: flex;
-      .start-time{
-        @include time;
-      }
-      .end-time{
-        @include time;
-        margin-left: 5px;
-      }
-    }
-  }
+  
 }
 
 .b-box{
