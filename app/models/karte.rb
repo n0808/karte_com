@@ -10,6 +10,10 @@ class Karte < ApplicationRecord
   # validates :instructions_id, presence: true
   validates :medical_examination_id, presence: true
   validates :day_id, presence: true
+  validate :doctor_start_date
+  validate :doctor_end_date
+  validate :dh_start_date
+  validate :dh_end_date
 
   belongs_to :user, class_name: "User", foreign_key: "user_id"
 
