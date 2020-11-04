@@ -51,7 +51,7 @@
         .explanatory_text
           .explanatory_text__box
           = f.text_area :before_treatment, class:"explanation"
-          = render partial: 'error_message', locals: { column: :before_treatment }
+          -# = render partial: 'error_message', locals: { column: :before_treatment }
           .time__box
             .doctor-time
               歯科医師 : 診療時間
@@ -81,7 +81,7 @@
             治療後の助言、及び療養生活をする上での留意点等
         .explanatory_text
           = f.text_area :after_treatment, class:"explanation"
-          = render partial: 'error_message', locals: { column: :after_treatment }
+          -# = render partial: 'error_message', locals: { column: :after_treatment }
     .Top-details
       .Top-details_box
         .c-box
