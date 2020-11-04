@@ -1,43 +1,7 @@
 @import "mixin";
 .Top-main{
-  width: 100vw;
+  width: 100%;
   background-color: #ffffff;
-}
-.Top-main_header{
-  display: flex;
-  width: 100vw;
-}
-.medical-title{
-  width: 60vw;
-  font-size: 30px;
-  text-decoration:underline;
-  margin-left: 50px;
-  margin-top: 10px;
-}
-.medical-day{
-  width: 20vw;
-  font-size: 20px;
-  margin-top: 12px;
-  .label {
-    display: block;
-    font: 1rem 'Fira Sans', sans-serif;
-  }
-  .input,
-  label {
-    margin: .4rem 0;
-  }
-  .date{
-    height: 22px;
-  }
-}
-.Download-link__PDF{
-  width: 75px;
-}
-
-.Top-sub-title{
-  font-size: 20px;
-  text-align: center;
-  border-bottom: double 5px #cccccc;
 }
 .Top-central{
   @include haikei;

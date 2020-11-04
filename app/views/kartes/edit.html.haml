@@ -1,10 +1,7 @@
+= render partial: 'subheader'
+
 .Top-main
   = form_with model: @karte, local: true do |f|
-    .Top-main_header
-      .medical-title
-        訪問歯科診療 情報提供書 
-    .Top-sub-title
-      ～歯科医師による居宅療養管理指導の情報提供、及び歯科衛生士等による居宅療養管理指導に係る歯科衛生士への指示内容～
     .Top-central
       .Top-central_box
         .Top-central_box__name
@@ -44,8 +41,28 @@
               = f.collection_select :day_id, Day.all, :id, :choice, {prompt: ""}, {class: "day-box"}
               = render partial: 'error_message', locals: { column: :day_id }
         .explanatory_text
+          .explanatory_text__box
           = f.text_area :before_treatment, class:"explanation"
-          = render partial: 'error_message', locals: { column: :before_treatment }
+          -# = render partial: 'error_message', locals: { column: :before_treatment }
+          .time__box
+            .doctor-time
+              歯科医師 : 診療時間
+              .doctor-time__box
+                .start-time
+                  = f.label "開始時間"
+                  = f.time_field :doctor_start_date, class:"times"
+                .end-time
+                  = f.label "終了時間"
+                  = f.time_field :doctor_end_date, class:"times"
+            .dh-time
+              DH : 診療時間
+              .dh-time__box
+                .start-time
+                  = f.label "開始時間"
+                  = f.time_field :dh_start_date, class:"times"
+                .end-time
+                  = f.label "終了時間"
+                  = f.time_field :dh_end_date, class:"times"
     .Top-details
       .Top-details_box
         .b-box

@@ -1,22 +1,27 @@
 @import "mixin";
-.main{
-  width: 100%;
+.Top-main{
+  width: 100vw;
   background-color: #ffffff;
 }
-.central{
+
+.Top-central{
   @include haikei;
 }
-.central_box{
+.Top-central_box{
   display: flex;
   justify-content: space-around;
-  font-size: 20px;
+  // font-size: 20px;
   padding-top: 15px;
   padding-bottom: 20px;
   border-bottom: dashed 2px #cccccc;
-  &__list{
+  &__name{
     display: flex;
-    .name-box{
+    margin-top: 3px;
+    font-size: 15px;
+    .name__box{
       @include spece;
+      font-size: 15px;
+
     }
   }
   .gender-box{
@@ -28,14 +33,15 @@
   .place-name{
     @include spece;
     width: 300px;
+    font-size: 15px;
   }
 }
 
-.details{
+.Top-details{
   padding-top: 20px;
   @include haikei;
 }
-.details_box{
+.Top-details_box{
   padding-bottom: 20px;
   border-bottom: dashed 2px #cccccc;
 }
@@ -83,13 +89,12 @@
     font-size: 15px;
     height: 50px;
 
-    .day-box{
-      @include spece;
-    }
   }
 }
 .explanatory_text{
   margin-left: 70px;
+  display: flex;
+
   .explanation{
     width:50vw;
     height:150px;
@@ -98,7 +103,40 @@
     margin-top: 10px;
     font-size: 20px;
   }
+  .time__box{
+    margin-top: 15px;
+    padding-left: 77px;
+    .doctor-time{
+      font-size: 20px;
+      &__box{
+        display: flex;
+        .start-time{
+          @include time;
+        }
+        .end-time{
+          @include time;
+          margin-left: 5px;
+        }
+      }
+    }
+    .dh-time{
+      font-size: 20px;
+      margin-top: 10px;
+      &__box{
+        display: flex;
+        .start-time{
+          @include time;
+        }
+        .end-time{
+          @include time;
+          margin-left: 5px;
+        }
+      }
+    }
+  }
+  
 }
+
 .b-box{
   display: flex;
   .title{
@@ -139,17 +177,16 @@
     @include spece;
   }
 }
-.submit-buttons {
+.submit-button {
   padding:40px;
-  display: flex;
   @include haikei;
-  .edit_btn {
+  .btn--yellow {
     margin: 40px 0 0;
     background:  #f7c200;
     border: 1px solid  #f7c200;
     color: #fff;
     display: block;
-    width: 30%;
+    width: 50%;
     line-height: 48px;
     font-size: 20px;
     transition: all ease-out .3s;
@@ -157,26 +194,7 @@
     height: 46px;
     margin: 0 auto;
     cursor: pointer;
-    text-decoration: none;
   }
-  .delete_btn {
-    margin: 40px 0 0;
-    background:  #ffb6c1;
-    border: 1px solid  #ffb6c1;
-    color: #fff;
-    display: block;
-    width: 30%;
-    line-height: 48px;
-    font-size: 20px;
-    transition: all ease-out .3s;
-    text-align: center;
-    height: 46px;
-    margin: 0 auto;
-    cursor: pointer;
-    text-decoration: none;
-  }
-}
-.return-button{
   .btn--darkorange {
     display: block;
     line-height: 48px;
@@ -186,6 +204,10 @@
     margin: 24px auto 0px;
     color: #ff8c00;
   }
+}
+.field_with_errors {
+  display: contents;
+
 }
 .day{
   display: flex;

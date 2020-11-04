@@ -1,15 +1,7 @@
+= render partial: 'subheader'
+
 .Top-main
   = form_with model: @karte, local: true do |f|
-    .Top-main_header
-      .medical-title
-        訪問歯科診療 情報提供書 
-      .medical-day
-        -# %label{:for => "start"} 診療日:
-        -# %input#start{:max => "2200-12-31", :min => "2000-01-01", :name => "trip-start", :type => "date", :value => "", class: 'date'}/
-      -# .medical-download
-      -#   = link_to image_tag('pdf_128.png', alt: 'PDF', class: 'Download-link__PDF'), root_path
-    .Top-sub-title
-      ～歯科医師による居宅療養管理指導の情報提供、及び歯科衛生士等による居宅療養管理指導に係る歯科衛生士への指示内容～
     .Top-central
       .Top-central_box
         .Top-central_box__name
@@ -38,13 +30,13 @@
             = render partial: 'error_message', locals: { column: :medical_examination_id }
           .Doctor-name
             %h5.Doctor-name__name
-              歯科医師名
+              歯科医師名 :
             %div
               = f.text_field :doctor_name, class:"doctor-name"
               = render partial: 'error_message', locals: { column: :doctor_name }
           .day
             %h5.days
-              日付
+              診療日 :
             %div
               = f.collection_select :day_id, Day.all, :id, :choice, {prompt: ""}, {class: "day-box"}
               = render partial: 'error_message', locals: { column: :day_id }

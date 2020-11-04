@@ -1,24 +1,20 @@
+= render partial: 'subheader'
 .main
   = form_with model: @karte, local: true do |f|
-    .main_header
-      .medical-title
-        訪問歯科診療 情報提供書 
-    .sub-title
-      ～歯科医師による居宅療養管理指導の情報提供、及び歯科衛生士等による居宅療養管理指導に係る歯科衛生士への指示内容～
     .central
       .central_box
         .central_box__list
-          %h3.list-name
+          %h5.list-name
             患者名 :
           %div.name-box
             = @karte.name 
         .central_box__list
-          %h3.list-name
+          %h5.list-name
             性別 :
           %div.gender-box
             = @karte.sex.choice
         .central_box__list
-          %h3.list-name
+          %h5.list-name
             診療所 :
           %div.place-box
             = @karte.clinic.choice
@@ -34,17 +30,37 @@
           .medical_examination_box
             = @karte.medical_examination.choice
           .Doctor-name
-            %h3.list-name
+            %h5.list-name
               歯科医師名 :
             %div.doctor-name
               = @karte.doctor_name
           .day
-            %h3.days
+            %h5.days
               診療日 :
             %div.day-box
               = @karte.created_at.strftime('%Y/%m/%d')
         .explanatory_text
-          = @karte.before_treatment
+          .explanatory_text__box
+            = @karte.before_treatment
+          .time__box
+            .doctor-time
+              歯科医師 : 診療時間
+              .doctor-time__box
+                .start-time
+                  = f.label "開始時間"
+                  = @karte.doctor_start_date
+                .end-time
+                  = f.label "終了時間"
+                  = @karte.doctor_end_date
+            .dh-time
+              DH : 診療時間
+              .dh-time__box
+                .start-time
+                  = f.label "開始時間"
+                  = @karte.dh_start_date
+                .end-time
+                  = f.label "終了時間"
+                  = @karte.dh_end_date
     .details
       .details_box
         .b-box
