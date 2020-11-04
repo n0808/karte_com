@@ -1,35 +1,31 @@
-.Top-main
+.main
   = form_with model: @karte, local: true do |f|
-    .Top-main_header
+    .main_header
       .medical-title
         訪問歯科診療 情報提供書 
-    .Top-sub-title
+    .sub-title
       ～歯科医師による居宅療養管理指導の情報提供、及び歯科衛生士等による居宅療養管理指導に係る歯科衛生士への指示内容～
-    .Top-central
-      .Top-central_box
-        .Top-central_box__list
+    .central
+      .central_box
+        .central_box__list
           %h3.list-name
             患者名 :
           %div.name-box
             = @karte.name 
-        .Top-central_box__list
+        .central_box__list
           %h3.list-name
             性別 :
           %div.gender-box
             = @karte.sex.choice
-        .Top-central_box__list
+        .central_box__list
           %h3.list-name
             診療所 :
           %div.place-box
             = @karte.clinic.choice
             = @karte.facility_name
-            -# - if @karte.clinic.choice = "施設"
-            -#   = @karte.facility_name
-            -# - else 
-            -#   = @karte.clinic.choice
 
-    .Top-details
-      .Top-details_box
+    .details
+      .details_box
         .a-box
           .title
             a
@@ -49,8 +45,8 @@
               = @karte.created_at.strftime('%Y/%m/%d')
         .explanatory_text
           = @karte.before_treatment
-    .Top-details
-      .Top-details_box
+    .details
+      .details_box
         .b-box
           .title
             b
@@ -58,8 +54,8 @@
             治療後の助言、及び療養生活をする上での留意点等
         .explanatory_text
           =  @karte.after_treatment
-    .Top-details
-      .Top-details_box
+    .details
+      .details_box
         .c-box
           .title
             c

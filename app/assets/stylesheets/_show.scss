@@ -1,9 +1,9 @@
 @import "mixin";
-.Top-main{
+.main{
   width: 100vw;
   background-color: #ffffff;
 }
-.Top-main_header{
+.main_header{
   display: flex;
   width: 100vw;
 }
@@ -15,16 +15,16 @@
   margin-top: 10px;
 }
 
-.Top-sub-title{
+.sub-title{
   font-size: 20px;
   text-align: center;
   border-bottom: double 5px #cccccc;
 }
-.Top-central{
+.central{
   @include haikei;
 
 }
-.Top-central_box{
+.central_box{
   display: flex;
   justify-content: space-around;
   font-size: 20px;
@@ -49,11 +49,11 @@
   }
 }
 
-.Top-details{
+.details{
   padding-top: 20px;
   @include haikei;
 }
-.Top-details_box{
+.details_box{
   padding-bottom: 20px;
   border-bottom: dashed 2px #cccccc;
 }
