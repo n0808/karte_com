@@ -56,16 +56,12 @@ class KartesController < ApplicationController
     @kartes = Karte.search(params[:keyword]).order('created_at DESC')
   end
 
+
   private
 
   def karte_params
     params.require(:karte).permit(:name, :before_treatment, :after_treatment, :part, :doctor_name, :facility_name, :sex_id, :clinic_id, :instructions_id, :medical_examination_id, :day_id, :doctor_start_date, :doctor_end_date, :dh_start_date, :dh_end_date) .merge(user_id: current_user.id)
   end
-
-
-  # def set_karte
-  #   @karte = Karte.find(params[:id])
-  # end
 
   def set_post
     @karte = current_user.kartes.find(params[:id])

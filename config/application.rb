@@ -19,6 +19,7 @@ module KarteCom
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', 'model.ja.{yml}').to_s]
     #time_zoneを東京に設定
     config.time_zone = 'Tokyo'
+    config.active_record.time_zone_aware_types = [:datetime, :time]
   end
 end
 

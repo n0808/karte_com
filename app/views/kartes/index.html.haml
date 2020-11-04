@@ -5,37 +5,44 @@
     .top-title
       %h1.title
         顧客情報一覧
-    -# %ul.top-box
-    -#   %li
-    -#     患者名
-    -#   %li
-    -#     性別
-    -#   %li
-    -#     診療場所
-    -#   %li
-    -#     診療日
     .top-list
       %table
         %tr
+          %th
+            カルテID
           %th
             患者名
           %th
             性別
           %th
-            診療場所
-          %th
             診療日
+          %th
+            医師：診療時間
+          %th
+            DH：診療時間
+          %th
+            診療場所
         - @kartes.each do |karte|
           %tr
+            %td
+              =karte.id
             %td
               = link_to karte_path(id: karte[:id]),class: 'name_link' do
                 = karte.name
             %td
               = karte.sex.choice
             %td
-              = karte.clinic.choice
-            %td
               = karte.created_at.strftime('%Y/%m/%d')
+            %td
+              = karte.doctor_start_date
+              = "~"
+              = karte.doctor_end_date
+            %td
+              = karte.dh_start_date
+              = "~"
+              = karte.dh_end_date
+            %td
+              = karte.clinic.choice
           %tr
 
         

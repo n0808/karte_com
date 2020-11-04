@@ -57,20 +57,20 @@
               歯科医師 : 診療時間
               .doctor-time__box
                 .start-time
-                  開始時間
-                  = f.time_select :doctor_start_date,{prompt: "--"}, class:"times"
+                  = f.label "開始時間"
+                  = f.time_field :doctor_start_date, class:"times"
                 .end-time
-                  〜 終了時間
-                  = f.time_select :doctor_start_date,{prompt: "--"}, class:"times"
+                  = f.label "終了時間"
+                  = f.time_field :doctor_end_date, class:"times"
             .dh-time
               DH : 診療時間
               .dh-time__box
                 .start-time
-                  開始時間
-                  = f.time_select :dh_start_date,{prompt: "--"}, class:"times"
+                  = f.label "開始時間"
+                  = f.time_field :dh_start_date, class:"times"
                 .end-time
-                  〜 終了時間
-                  = f.time_select :dh_end_date,{prompt: "--"}, class:"times"
+                  = f.label "終了時間"
+                  = f.time_field :dh_end_date, class:"times"
 
     .Top-details
       .Top-details_box
