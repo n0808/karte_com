@@ -6,23 +6,23 @@
         .central_box__list
           %h5.list-name
             患者名 :
-          %div.name-box
+          %div.name
             = @karte.name 
         .central_box__list
           %h5.list-name
             性別 :
-          %div.gender-box
+          %div.gender
             = @karte.sex.choice
         .central_box__list
           %h5.list-name
             診療所 :
-          %div.place-box
+          %div.place
             = @karte.clinic.choice
             = @karte.facility_name
 
     .details
       .details_box
-        .a-box
+        .a_box
           .title
             a
           .symptoms
@@ -39,48 +39,50 @@
               診療日 :
             %div.day-box
               = @karte.created_at.strftime('%Y/%m/%d')
-        .explanatory_text
-          .explanatory_text__box
+        .explanatory
+          .explanatory__text
             = @karte.before_treatment
-          .time__box
-            .doctor-time
+          .time-boxs
+            .time-boxs__doctor
               歯科医師 : 診療時間
-              .doctor-time__box
-                .start-time
+              .time-boxs__doctor__time
+                .start
                   = f.label "開始時間"
                   = @karte.doctor_start_date
-                .end-time
+                .end
                   = f.label "終了時間"
                   = @karte.doctor_end_date
-            .dh-time
+            .time-boxs__dh
               DH : 診療時間
-              .dh-time__box
-                .start-time
+              .time-boxs__dh__time
+                .start
                   = f.label "開始時間"
                   = @karte.dh_start_date
-                .end-time
+                .end
                   = f.label "終了時間"
                   = @karte.dh_end_date
     .details
       .details_box
-        .b-box
+        .b_box
           .title
             b
           .symptoms
             治療後の助言、及び療養生活をする上での留意点等
-        .explanatory_text
-          =  @karte.after_treatment
+        .explanatory
+          .explanatory__text
+            = @karte.after_treatment
     .details
       .details_box
-        .c-box
+        .c_box
           .title
             c
           .instructions
             口腔ケアを行う歯科衛生士への指示内容
-        .c-instructions_box
+        .c-instructions__box
           = @karte.instructions.choice
-        .explanatory_text
-          = @karte.part
+        .explanatory
+          .explanatory__text
+            = @karte.part
     .submit-buttons
       - if user_signed_in? && current_user.id == @karte.user_id
         = link_to 'カルテの編集', "/kartes/#{@karte.id}/edit", method: :get, class: "edit_btn"

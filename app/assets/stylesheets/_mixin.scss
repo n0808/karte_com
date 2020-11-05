@@ -1,5 +1,4 @@
 @mixin box-size{
-
   margin-left: 5px;
   text-align: center;
 }
@@ -16,4 +15,12 @@
   margin-top: 5px;
   margin-bottom: 5px;
   font-size: 15px;
+}
+
+@mixin central-box{
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 15px;
+  padding-bottom: 20px;
+  border-bottom: dashed 2px #cccccc;
 }

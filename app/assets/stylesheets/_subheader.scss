@@ -15,3 +15,24 @@
   border-bottom: double 5px #cccccc;
   padding: 5px 5px;
 }
+
+@media screen and (min-width: 481px) and (max-width: 768px){
+  .title_header{
+    display: flex;
+    width: 100%;
+  }
+  .medical-title{
+    font-size: 25px;
+    text-decoration:underline;
+    margin-left: 40px;
+    margin-top: 10px;
+  }
+  
+  .sub_title{
+    font-size: 13px;
+    text-align: center;
+    border-bottom: double 5px #cccccc;
+    padding: 5px 5px;
+  }
+  
+}

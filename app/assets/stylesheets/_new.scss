@@ -8,12 +8,7 @@
 
 }
 .Top-central_box{
-  display: flex;
-  justify-content: space-around;
-  // font-size: 20px;
-  padding-top: 15px;
-  padding-bottom: 20px;
-  border-bottom: dashed 2px #cccccc;
+  @include central-box;
   &__name{
     display: flex;
     margin-top: 3px;
@@ -21,19 +16,24 @@
     .name__box{
       @include spece;
       font-size: 15px;
-
     }
   }
-  .gender-box{
-    @include spece;
+  &__sex{
+    font-size: 20px;
+    .gender-box{
+      @include spece;
+    }
   }
-  .place-box{
-    @include spece;
+  &__place{
+    font-size: 20px;
+    .place-box{
+      @include spece;
+    }
   }
   .place-name{
     @include spece;
     width: 300px;
-    font-size: 15px;
+    font-size: 18px;
   }
 }
 
@@ -62,10 +62,10 @@
   }
   .medical_examination_box{
     @include box-size;
-    margin-left: 30px;
+
     font-size: 17px;
     height: 50px;
-    width: 360px;
+    width: 300px;
     line-height: 50px;
     .medical-box{
       @include spece;
@@ -88,7 +88,9 @@
     display: flex;
     font-size: 15px;
     height: 50px;
-
+    .day-box{
+      @include spece;
+    }
   }
 }
 .explanatory_text{
@@ -105,7 +107,7 @@
   }
   .time__box{
     margin-top: 15px;
-    padding-left: 77px;
+    padding-left: 24px;
     .doctor-time{
       font-size: 20px;
       &__box{
@@ -212,3 +214,225 @@
 .day{
   display: flex;
 }
+@media screen and (min-width: 481px) and (max-width: 768px) {
+	.Top-main{
+    width: 100%;
+    background-color: #ffffff;
+  }
+  .Top-central{
+    @include haikei;
+  
+  }
+  .Top-central_box{
+    @include central-box;
+    &__name{
+      display: flex;
+      margin-top: 3px;
+      font-size: 1.1rem;
+      .name__box{
+        @include spece;
+        font-size: 12px;
+      }
+    }
+    &__sex{
+      font-size: 20px;
+      .gender-box{
+        @include spece;
+      }
+    }
+    &__place{
+      font-size: 20px;
+      .place-box{
+        @include spece;
+      }
+    }
+    .place-name{
+      @include spece;
+      margin-left: 8px;
+      width: 220px;
+      font-size: 16px;
+    }
+  }
+  
+  .Top-details{
+    padding-top: 20px;
+    @include haikei;
+  }
+  .Top-details_box{
+    padding-bottom: 20px;
+    border-bottom: dashed 2px #cccccc;
+  }
+  .a-box{
+    display: flex;
+    .title{
+      @include box-size;
+      font-size: 20px;
+      height: 50px;
+      width: 25px;
+    }
+    .symptoms{
+      @include box-size;
+      font-size: 11px;
+      height: 50px;
+      width: 215px;
+      line-height: 35px;
+    }
+    .medical_examination_box{
+      text-align: center;
+      height: 50px;
+      width: 50px;
+      line-height: 35px;
+      .medical-box{
+        @include spece;
+        font-size: 8px;
+        width: 50px;
+      }
+    }
+    .Doctor-name{
+      margin-left: 15px;
+      height: 50px;
+      width: 255px;
+      display: flex;
+      &__name{
+        font-size: 0.8rem;
+      }
+      .doctor-name{
+        @include spece;
+        font-size: 0.8rem;
+      }
+    }
+    .day{
+      display: flex;
+      font-size: 12px;
+      height: 50px;
+      .day-box{
+        @include spece;
+        font-size: 12px;
+        margin-top: 10px;
+      }
+    }
+  }
+  .explanatory_text{
+    margin-left: 30px;
+    display: flex;
+  
+    .explanation{
+      width:50vw;
+      height:150px;
+      border: 1px solid #ccc;
+      resize: none;
+      margin-top: 10px;
+      font-size: 20px;
+    }
+    .time__box{
+      margin-top: 15px;
+      padding-left: 13px;
+      .doctor-time{
+        font-size: 20px;
+        &__box{
+          display: flex;
+          .start-time{
+            @include time;
+          }
+          .end-time{
+            @include time;
+            margin-left: 5px;
+          }
+        }
+      }
+      .dh-time{
+        font-size: 20px;
+        margin-top: 10px;
+        &__box{
+          display: flex;
+          .start-time{
+            @include time;
+          }
+          .end-time{
+            @include time;
+            margin-left: 5px;
+          }
+        }
+      }
+    }
+    
+  }
+  
+  .b-box{
+    display: flex;
+    .title{
+      @include box-size;
+      font-size: 30px;
+      height: 50px;
+      width: 50px;
+    }
+    .symptoms{
+      @include box-size;
+      font-size: 20px;
+      height: 50px;
+      width: 480px;
+      line-height: 50px;
+    }
+  }
+  
+  .c-box{
+    display: flex;
+    .title{
+      @include box-size;
+      font-size: 30px;
+      height: 50px;
+      width: 50px;
+    }
+    .instructions{
+      @include box-size;
+      font-size: 20px;
+      height: 50px;
+      width: 380px;
+      line-height: 50px;
+    }
+  }
+  .c-instructions_box{
+    margin-left: 70px;
+    font-size: 17px;
+    .instructions-box{
+      @include spece;
+    }
+  }
+  .submit-button {
+    padding:40px;
+    @include haikei;
+    .btn--yellow {
+      margin: 40px 0 0;
+      background:  #f7c200;
+      border: 1px solid  #f7c200;
+      color: #fff;
+      display: block;
+      width: 50%;
+      line-height: 48px;
+      font-size: 20px;
+      transition: all ease-out .3s;
+      text-align: center;
+      height: 46px;
+      margin: 0 auto;
+      cursor: pointer;
+    }
+    .btn--darkorange {
+      display: block;
+      line-height: 48px;
+      font-size: 14px;
+      text-align: center;
+      text-decoration: none;
+      margin: 24px auto 0px;
+      color: #ff8c00;
+    }
+  }
+  .field_with_errors {
+    display: contents;
+  
+  }
+  .day{
+    display: flex;
+  }
+ 
+}
+

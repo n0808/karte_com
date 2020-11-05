@@ -17,7 +17,6 @@
           = f.collection_radio_buttons :clinic_id, Clinic.all, :id, :choice, {prompt: ""}, {class: "place-box"}
           = f.text_field :facility_name, class:"place-name", placeholder: "施設の名称"
           = render partial: 'error_message', locals: { column: :clinic_id }
-
     .Top-details
       .Top-details_box
         .a-box

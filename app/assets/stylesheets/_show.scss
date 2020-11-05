@@ -7,27 +7,34 @@
   @include haikei;
 }
 .central_box{
-  display: flex;
-  justify-content: space-around;
-  font-size: 20px;
-  padding-top: 15px;
-  padding-bottom: 20px;
-  border-bottom: dashed 2px #cccccc;
+  @include central-box;
   &__list{
     display: flex;
-    .name-box{
+    margin-top: 3px;
+    font-size: 18px;
+    .list-name{
+      font-size: 18px;
+      line-height: 20px;
+    }
+    .name{
       @include spece;
+      font-size: 18px;
+      line-height: 20px;
     }
   }
-  .gender-box{
+  .gender{
     @include spece;
+    line-height: 20px;
   }
-  .place-box{
+  .place{
     @include spece;
+    line-height: 20px;
   }
   .place-name{
     @include spece;
     width: 300px;
+    font-size: 18px;
+    line-height: 20px;
   }
 }
 
@@ -39,7 +46,7 @@
   padding-bottom: 20px;
   border-bottom: dashed 2px #cccccc;
 }
-.a-box{
+.a_box{
   display: flex;
   .title{
     @include box-size;
@@ -56,10 +63,9 @@
   }
   .medical_examination_box{
     @include box-size;
-    margin-left: 30px;
-    font-size: 17px;
+    font-size: 20px;
     height: 50px;
-    width: 360px;
+    width: 270px;
     line-height: 50px;
     .medical-box{
       @include spece;
@@ -70,11 +76,12 @@
     padding-top: 15px;
     font-size: 15px;
     height: 50px;
-    width: 350px;
+    width: 270px;
     display: flex;
      .doctor-name{
       @include spece;
-      font-size: 15px;
+      font-size: 18px;
+      line-height: 25px;
     }
   }
   .day{
@@ -82,24 +89,57 @@
     display: flex;
     font-size: 15px;
     height: 50px;
-
     .day-box{
       @include spece;
+      font-size: 18px;
+      line-height: 25px;
     }
   }
 }
-.explanatory_text{
+.explanatory{
   margin-left: 70px;
-  .explanation{
-    width:50vw;
+  display: flex;
+  &__text{
+    width:46%;
     height:150px;
     border: 1px solid #ccc;
     resize: none;
     margin-top: 10px;
     font-size: 20px;
   }
+  .time-boxs{
+    margin-top: 15px;
+    padding-left: 82px;
+    &__doctor{
+      font-size: 20px;
+      &__time{
+        display: flex;
+        .start{
+          @include time;
+        }
+        .end{
+          @include time;
+          margin-left: 5px;
+        }
+      }
+    }
+    &__dh{
+      font-size: 20px;
+      margin-top: 10px;
+      &__time{
+        display: flex;
+        .start{
+          @include time;
+        }
+        .end{
+          @include time;
+          margin-left: 5px;
+        }
+      }
+    }
+  }
 }
-.b-box{
+.b_box{
   display: flex;
   .title{
     @include box-size;
@@ -116,7 +156,7 @@
   }
 }
 
-.c-box{
+.c_box{
   display: flex;
   .title{
     @include box-size;
@@ -132,7 +172,7 @@
     line-height: 50px;
   }
 }
-.c-instructions_box{
+.c-instructions__box{
   margin-left: 70px;
   font-size: 17px;
   .instructions-box{
