@@ -5,7 +5,7 @@
     .Top-central
       .Top-central_box
         .Top-central_box__name
-          %h3.Top-central_box__name__name
+          %h5.Top-central_box__name__name
             患者名
           %div
             = f.text_field :name, class:"name__box"
@@ -29,13 +29,13 @@
             = f.collection_select :medical_examination_id, MedicalExamination.all, :id, :choice, {prompt: ""}, {class: "medical-box"}
             = render partial: 'error_message', locals: { column: :medical_examination_id }
           .Doctor-name
-            %h3.Doctor-name__name
+            %h5.Doctor-name__name
               歯科医師名
             %div
               = f.text_field :doctor_name, class:"doctor-name"
               = render partial: 'error_message', locals: { column: :doctor_name }
           .day
-            %h3.days
+            %h5.days
               日付
             %div
               = f.collection_select :day_id, Day.all, :id, :choice, {prompt: ""}, {class: "day-box"}

@@ -1,19 +1,14 @@
 @import "mixin";
 .Top-main{
-  width: 100vw;
+  width: 100%;
   background-color: #ffffff;
 }
-
 .Top-central{
   @include haikei;
+
 }
 .Top-central_box{
-  display: flex;
-  justify-content: space-around;
-  // font-size: 20px;
-  padding-top: 15px;
-  padding-bottom: 20px;
-  border-bottom: dashed 2px #cccccc;
+  @include central-box;
   &__name{
     display: flex;
     margin-top: 3px;
@@ -21,19 +16,24 @@
     .name__box{
       @include spece;
       font-size: 15px;
-
     }
   }
-  .gender-box{
-    @include spece;
+  &__sex{
+    font-size: 20px;
+    .gender-box{
+      @include spece;
+    }
   }
-  .place-box{
-    @include spece;
+  &__place{
+    font-size: 20px;
+    .place-box{
+      @include spece;
+    }
   }
   .place-name{
     @include spece;
     width: 300px;
-    font-size: 15px;
+    font-size: 18px;
   }
 }
 
@@ -62,10 +62,10 @@
   }
   .medical_examination_box{
     @include box-size;
-    margin-left: 30px;
+
     font-size: 17px;
     height: 50px;
-    width: 360px;
+    width: 300px;
     line-height: 50px;
     .medical-box{
       @include spece;
@@ -88,7 +88,9 @@
     display: flex;
     font-size: 15px;
     height: 50px;
-
+    .day-box{
+      @include spece;
+    }
   }
 }
 .explanatory_text{
@@ -105,7 +107,7 @@
   }
   .time__box{
     margin-top: 15px;
-    padding-left: 77px;
+    padding-left: 24px;
     .doctor-time{
       font-size: 20px;
       &__box{
