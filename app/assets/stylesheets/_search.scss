@@ -1,7 +1,7 @@
 .Search{
   width: 100vw;
   height: 100vh;
-  background-color: #f8f4e6;
+  background-color: #ffefff;
 }
 .Search-title{
   display: flex;
@@ -12,9 +12,10 @@
   align-items: center;
   padding-top: 15px;
   & .bold {
-    padding-right: 10px;
+    padding-right: 3px;
     font-size: 22px;
     font-weight: bold;
+    padding-top: 6px;
   }
   &__count {
     padding-left: 30px;

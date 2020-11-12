@@ -6,6 +6,5 @@ class MedicalExamination < ActiveHash::Base
   add id: 3, choice: "急患"
   add id: 4, choice: "DRチェック"
   add id: 5, choice: "再初診"
-
   has_many :kartes
 end

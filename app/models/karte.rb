@@ -8,8 +8,9 @@ class Karte < ApplicationRecord
   validates :clinic_id, presence: true
   validates :medical_examination_id, presence: true
   validates :day_id, presence: true
-  validate :doctor_start_date
-  validate :doctor_end_date
+  validates :instructions_id, presence: true
+  validates :doctor_start_date, presence: true
+  validates :doctor_end_date, presence: true
   validate :dh_start_date
   validate :dh_end_date
 

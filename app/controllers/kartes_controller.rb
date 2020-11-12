@@ -20,7 +20,7 @@ class KartesController < ApplicationController
       redirect_to root_path
       logger.debug @karte.errors.inspect
     else
-      render :new
+      render("kartes/new")
     end
   end
 

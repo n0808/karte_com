@@ -86,6 +86,6 @@
     .submit-buttons
       - if user_signed_in? && current_user.id == @karte.user_id
         = link_to 'カルテの編集', "/kartes/#{@karte.id}/edit", method: :get, class: "edit_btn"
-        = link_to 'このカルテを削除する', karte_path(@karte.id), method: :delete, class: "delete_btn"
+        = link_to 'カルテを削除', karte_path(@karte.id), method: :delete, class: "delete_btn"
     .return-button
       = link_to 'もどる', root_path, class: 'btn--darkorange'

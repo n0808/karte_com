@@ -10,7 +10,7 @@ ja:
         clinic_id: 診療所
         before_treatment: aの項目
         after_treatment: bの項目
-        instructions_id: cの項目
+        instructions_id: 指示内容
         part: 具体的な部位・内容
         medical_examination_id: 診察状況
         doctor_name: 歯科医師名

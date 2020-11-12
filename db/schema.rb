@@ -21,14 +21,14 @@ ActiveRecord::Schema.define(version: 2020_11_02_051949) do
     t.string "facility_name"
     t.integer "sex_id", null: false
     t.integer "clinic_id", null: false
-    t.integer "instructions_id"
+    t.integer "instructions_id", null: false
     t.integer "medical_examination_id", null: false
     t.integer "day_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id", null: false
-    t.string "doctor_start_date"
-    t.string "doctor_end_date"
+    t.string "doctor_start_date", null: false
+    t.string "doctor_end_date", null: false
     t.string "dh_start_date"
     t.string "dh_end_date"
   end

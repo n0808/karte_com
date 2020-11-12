@@ -1,7 +1,7 @@
 
   .header {
     height: 90px;
-    box-shadow: 0 3px 3px #f7c200;
+    box-shadow: 0 3px 3px #ff7aff;
     .header-top {
       display: flex;
       &__name{
@@ -50,7 +50,7 @@
         text-decoration: none;
         color: #4d4d4d;
         &:hover {
-          color: #f7c200;
+          color: #ff7aff;
         }
       }
     }
@@ -107,7 +107,7 @@
         text-decoration: none;
         color: #4d4d4d;
         &:hover {
-          color: #f7c200;
+          color: #ff7aff;
         }
       }
     }

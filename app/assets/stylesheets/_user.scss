@@ -1,5 +1,4 @@
 $white: #fff;
-
 $lightgray: #f5f5f5;
 
 @mixin hover-underline {
@@ -18,7 +17,7 @@ $lightgray: #f5f5f5;
 
 .AccountPage {
   min-height: 100vh;
-  background-color:#f8f4e6;
+  background-color:#ffefff;
   color: #333;
   font-size: 14px;
   padding-top: 100px;
@@ -53,7 +52,8 @@ $lightgray: #f5f5f5;
       line-height: 40px;
       margin-top: 8px;
       border-radius: 4px;
-      background-color: #f7c200;
+      background:  #ff5bff;
+      border: 1px solid  #9d9d9d;
       color: $white;
       text-decoration: none;
     }
@@ -78,7 +78,7 @@ $lightgray: #f5f5f5;
   .ForgetPassword {
     display: block;
     margin-top: 40px;
-    color:#b39500;
+    color:#ff5bff;
     text-decoration: none;
     &:hover {
       @include hover-underline
@@ -159,7 +159,8 @@ $lightgray: #f5f5f5;
   margin-top: 25px;
   border-radius: 4px;
   border-style: none;
-  background-color: #f7c200;
+  background:  #ff5bff;
+  border: 1px solid  #9d9d9d;
   color: $white;
   font-size: 14px;
   text-align: center;
